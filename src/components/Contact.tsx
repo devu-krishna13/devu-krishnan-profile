@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from "lucide-react"; // ✅ Add WhatsApp icon
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Globe } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +17,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    // You can integrate EmailJS or another email service here
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,25 +31,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "nerajnerajlal@gmail.com",
-      href: "mailto:nerajnerajlal@gmail.com"
+      value: "devukrishnanp@gmail.com",
+      href: "mailto:devukrishnanp@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 8547470675",
-      href: "tel:+918547470675"
-    },
-    {
-      icon: MessageCircle, // ✅ WhatsApp Icon
-      label: "WhatsApp",
-      value: "+91 8547470675",
-      href: "https://wa.me/918547470675" // ✅ WhatsApp direct chat link
+      value: "+91 9074 626 932",
+      href: "tel:+919074626932"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Kollam, Kerala, India",
+      value: "Kerala, India",
       href: "#"
     }
   ];
@@ -57,15 +52,16 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/nerajlal",
-      username: "@nerajlal"
+      href: "https://github.com/devu-krishna13",
+      username: "@devu-krishna13"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/nerajlal",
-      username: "Neraj Lal"
-    }
+      href: "https://www.linkedin.com/in/devu-krishnan-p-/",
+      username: "devu-krishnan-p-"
+    },
+    
   ];
 
   return (
@@ -82,111 +78,86 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* LEFT COLUMN */}
-          <div className="space-y-8 animate-slide-up">
-            {/* Contact Form */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-glow transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Send className="w-6 h-6 text-primary" />
-                  Send me a message
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="text-sm font-medium mb-2 block">
-                        Name
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Your name"
-                        required
-                        className="bg-background/50 border-border/50 focus:border-primary"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="text-sm font-medium mb-2 block">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your.email@example.com"
-                        required
-                        className="bg-background/50 border-border/50 focus:border-primary"
-                      />
-                    </div>
-                  </div>
-
+          {/* Contact Form */}
+          <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-glow transition-all duration-300 animate-slide-up">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3">
+                <Send className="w-6 h-6 text-primary" />
+                Send me a message
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="subject" className="text-sm font-medium mb-2 block">
-                      Subject
-                    </label>
+                    <label htmlFor="name" className="text-sm font-medium mb-2 block">Name</label>
                     <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                      id="name"
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
-                      placeholder="Project inquiry, collaboration, etc."
+                      placeholder="Your name"
                       required
                       className="bg-background/50 border-border/50 focus:border-primary"
                     />
                   </div>
-
                   <div>
-                    <label htmlFor="message" className="text-sm font-medium mb-2 block">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                    <label htmlFor="email" className="text-sm font-medium mb-2 block">Email</label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
                       onChange={handleChange}
-                      placeholder="Tell me about your project, goals, and how I can help..."
-                      rows={6}
+                      placeholder="your.email@example.com"
                       required
-                      className="bg-background/50 border-border/50 focus:border-primary resize-none"
+                      className="bg-background/50 border-border/50 focus:border-primary"
                     />
                   </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300 group"
-                    size="lg"
-                  >
-                    <Send className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Availability (moved here) */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6 text-center">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="font-semibold">Available for new projects</span>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  Currently accepting new freelance projects and consulting opportunities. 
-                  Let's discuss your next big idea!
-                </p>
-              </CardContent>
-            </Card>
-          </div>
 
-          {/* RIGHT COLUMN */}
+                <div>
+                  <label htmlFor="subject" className="text-sm font-medium mb-2 block">Subject</label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Project inquiry, collaboration, etc."
+                    required
+                    className="bg-background/50 border-border/50 focus:border-primary"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="text-sm font-medium mb-2 block">Message</label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project, goals, and how I can help..."
+                    rows={6}
+                    required
+                    className="bg-background/50 border-border/50 focus:border-primary resize-none"
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300 group"
+                  size="lg"
+                >
+                  <Send className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
+          {/* Contact Info & Social */}
           <div className="space-y-8 animate-slide-up delay-200">
-            {/* Contact Info */}
+            {/* Contact Information */}
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
@@ -196,8 +167,6 @@ const Contact = () => {
                   <a
                     key={index}
                     href={info.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="flex items-center gap-4 p-3 rounded-lg hover:bg-primary/10 transition-colors group"
                   >
                     <info.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
@@ -238,6 +207,20 @@ const Contact = () => {
                 ))}
               </CardContent>
             </Card>
+
+            {/* Availability Notice */}
+            {/* <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+              <CardContent className="p-6 text-center">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="font-semibold">Available for new projects</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Currently accepting new freelance projects and consulting opportunities. 
+                  Let's discuss your next big idea!
+                </p>
+              </CardContent>
+            </Card> */}
           </div>
         </div>
       </div>
