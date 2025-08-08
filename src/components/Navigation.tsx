@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, View } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Navigation = () => {
@@ -21,6 +21,7 @@ const Navigation = () => {
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
+    { label: "Portfolio", href: "#portfolio" },
     { label: "Contact", href: "#contact" }
   ];
 
@@ -50,7 +51,7 @@ const Navigation = () => {
               }}
               className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform"
             >
-              NERAJ LAL
+              DK
             </a>
           </div>
 
@@ -75,16 +76,23 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
-            >
-              <View className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-              View Resume
-            </Button>
-          </div>
+<div className="hidden md:block">
+  <a
+    href="https://drive.google.com/uc?export=download&id=1w6u2kaD52tVY3S923xABHD6QarzC3CVE"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button 
+      variant="outline" 
+      size="sm" 
+      className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
+    >
+      <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+      Resume
+    </Button>
+  </a>
+</div>
+
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -122,8 +130,8 @@ const Navigation = () => {
                   size="sm" 
                   className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
                 >
-                  <View className="w-4 h-4 mr-2" />
-                  View Resume
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Resume
                 </Button>
               </div>
             </div>
