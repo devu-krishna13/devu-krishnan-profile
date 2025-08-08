@@ -31,6 +31,13 @@ const Portfolio = () => {
       link: "https://xolaheritagehotel.com/",
       category: "Hotel Booking",
       icon: Globe
+    },
+    {
+      title: "The Kerala Store India",
+      description: "E-commerce platform for authentic Kerala products with SEO optimization.",
+      link: "https://thekeralastore.com/",
+      category: "E-Commerce",
+      icon: Globe
     }
   ];
 
@@ -87,3 +94,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
