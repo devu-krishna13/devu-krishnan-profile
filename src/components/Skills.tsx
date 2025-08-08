@@ -9,68 +9,68 @@ const Skills = () => {
       icon: Code,
       title: "Frontend Development",
       skills: [
-        { name: "React.js", level: 80 },
-        { name: "JavaScript", level: 92 },
-        { name: "HTML5 & CSS3", level: 97 },
-        { name: "Tailwind CSS", level: 85 }
+        { name: "HTML/CSS", level: 95 },
+        { name: "JavaScript", level: 90 },
+        { name: "React.js", level: 88 },
+        { name: "Bootstrap/Elementor", level: 92 }
       ]
     },
     {
       icon: Database,
       title: "Backend Development",
       skills: [
-        { name: "Java (Spring Boot)", level: 88 },
-        { name: "PHP (Laravel)", level: 85 },
-        { name: "Node.js / Express", level: 80 },
-        { name: "Python (Django)", level: 60 }
+        { name: "PHP (Custom & CodeIgniter)", level: 90 },
+        { name: "Node.js", level: 85 },
+        { name: "Python", level: 80 },
+        { name: "MySQL / MongoDB", level: 88 }
       ]
     },
     {
       icon: Cloud,
-      title: "Database & Cloud",
+      title: "Tools & Platforms",
       skills: [
-        { name: "MySQL", level: 95 },
-        { name: "SQL", level: 90 },
-        { name: "Oracle", level: 85 },
-        { name: "Firebase", level: 68 }
+        { name: "WordPress", level: 95 },
+        { name: "Git / GitHub", level: 90 },
+        { name: "Google Search Console", level: 85 },
+        { name: "VS Code / Eclipse / Sublime", level: 80 }
       ]
     },
     {
       icon: Palette,
-      title: "Design & UI",
+      title: "UI/UX & SEO",
       skills: [
-        { name: "Bootstrap", level: 90 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "UI/UX Design", level: 75 },
-        { name: "Responsive Layouts", level: 92 }
+        { name: "Elementor & Custom Themes", level: 90 },
+        { name: "On-Page SEO", level: 88 },
+        { name: "Responsive Design", level: 92 },
+        { name: "Performance Optimization", level: 85 }
       ]
     },
     {
       icon: Wrench,
-      title: "Tools & Technologies",
+      title: "Tech Stacks & Frameworks",
       skills: [
-        { name: "Git & GitHub", level: 95 },
-        { name: "VS Code / Eclipse", level: 95 },
-        { name: "Postman / REST APIs", level: 75 },
-        { name: "Sublime / CLI Tools", level: 90 }
+        { name: "MERN Stack", level: 85 },
+        { name: "Laravel (Learning)", level: 70 },
+        { name: "Python ML (Basic)", level: 65 },
+        { name: "CodeIgniter", level: 80 }
       ]
     },
     {
       icon: Users,
-      title: "Soft Skills",
+      title: "Professional Skills",
       skills: [
-        { name: "Team Leadership", level: 88 },
-        { name: "Communication", level: 90 },
-        { name: "Problem Solving", level: 95 },
-        { name: "Hackathon Participation", level: 85 }
+        { name: "Client Collaboration", level: 90 },
+        { name: "Content Management", level: 88 },
+        { name: "Problem Solving", level: 92 },
+        { name: "Team Communication", level: 89 }
       ]
     }
   ];
 
   const technologies = [
-    "Java", "Spring Boot", "Hibernate", "JDBC", "Spring MVC", "React.js", "Oracle", "SQL", "PHP", "Laravel",
-    "MySQL", "Python", "Django", "HTML5", "CSS3", "JavaScript", "Git", "Tailwind CSS", "Machine Learning", 
-    "Bootstrap", "REST APIs", "Hostinger", "Digital Ocean"
+    "React.js", "PHP", "JavaScript", "Node.js", "MongoDB", "MySQL", "WordPress",
+    "Elementor", "Bootstrap", "CodeIgniter", "Google Search Console", "VS Code",
+    "Python", "Laravel", "Git", "SEO", "HTML", "CSS"
   ];
 
   return (
@@ -81,7 +81,7 @@ const Skills = () => {
             Skills & Expertise
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Full stack developer proficient in Java, PHP, and ML, with practical experience gained from academic, self-learning, and real-world projects.
+            Practical knowledge and hands-on experience gained from full-stack development, SEO analysis, and building user-friendly, high-performance web applications.
           </p>
         </div>
 
@@ -90,40 +90,23 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-glow transition-all duration-500 animate-scale-in group relative overflow-hidden"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-glow transition-all duration-300 animate-slide-up group"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
-              <CardHeader className="pb-4 relative z-10">
+              <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-lg">
-                  <div className="relative">
-                    <category.icon className="w-6 h-6 text-primary group-hover:scale-125 group-hover:animate-bounce-subtle transition-all duration-300" />
-                    <div className="absolute inset-0 w-6 h-6 text-primary/30 group-hover:animate-glow-pulse" />
-                  </div>
-                  <span className="group-hover:text-primary/90 transition-colors">{category.title}</span>
+                  <category.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                  {category.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 relative z-10">
+              <CardContent className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2 group/skill">
+                  <div key={skillIndex} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium group-hover/skill:text-primary/80 transition-colors">
-                        {skill.name}
-                      </span>
-                      <span className="text-sm text-muted-foreground font-mono bg-primary/10 px-2 py-1 rounded-md group-hover/skill:bg-primary/20 transition-colors">
-                        {skill.level}%
-                      </span>
+                      <span className="text-sm font-medium">{skill.name}</span>
+                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
                     </div>
-                    <div className="relative">
-                      <Progress 
-                        value={skill.level} 
-                        className="h-3 group-hover/skill:h-4 transition-all duration-300"
-                      />
-                      <div 
-                        className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-primary-glow rounded-full transition-all duration-1000 opacity-0 group-hover/skill:opacity-100"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
+                    <Progress value={skill.level} className="h-2" />
                   </div>
                 ))}
               </CardContent>
@@ -132,22 +115,16 @@ const Skills = () => {
         </div>
 
         {/* Technology Tags */}
-        <div className="animate-fade-in" style={{ animationDelay: '800ms' }}>
-          <h3 className="text-2xl font-semibold text-center mb-8 bg-gradient-primary bg-clip-text text-transparent">
-            Technologies I Work With
-          </h3>
+        <div className="animate-fade-in delay-500">
+          <h3 className="text-2xl font-semibold text-center mb-8">Technologies I Work With</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {technologies.map((tech, index) => (
               <Badge 
                 key={index} 
                 variant="secondary" 
-                className="px-4 py-2 text-sm hover:bg-primary/20 hover:border-primary/30 hover:scale-110 hover:shadow-glow transition-all duration-300 cursor-default animate-slide-up group relative overflow-hidden"
-                style={{ animationDelay: `${900 + index * 50}ms` }}
+                className="px-4 py-2 text-sm hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 cursor-default"
               >
-                <span className="relative z-10 group-hover:text-primary-foreground transition-colors">
-                  {tech}
-                </span>
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {tech}
               </Badge>
             ))}
           </div>
