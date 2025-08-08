@@ -6,39 +6,39 @@ import { ExternalLink, Github, Code, Smartphone, Globe, Database } from "lucide-
 const Projects = () => {
   const projects = [
     {
-      title: "Serve The Needy",
+      title: "Book My Turf",
       description:
-        "A MERN stack platform to reduce food wastage and scarcity by connecting donors and shelters. Ensures traceability, location-based matching, etc.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-      technologies: ["MongoDB", "Express", "React", "Node.js", "GPS"],
-      features: ["Food donation", "Shelter management", "Admin dashboard", "Geo-based matching"],
-      category: "Full Stack",
+        "A web-based turf booking system that allows users to reserve sports facilities in real-time with an admin panel to manage bookings and availability.",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzTbolx7PYdasP9fLYzVJlL4U5VntQzRt7HA&s",
+      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      features: ["Real-time availability", "User booking system", "Admin panel", "Responsive UI"],
+      category: "Web App",
       icon: Globe,
       github: "#",
       demo: "#"
     },
     {
-      title: "Farming Assistant",
+      title: "AGRO-WIZ – Leaf Disease Detection",
       description:
-        "A PHP-based web platform that enables farmers to sell products, manage inventory, and allow admin approval. Includes buyer and retailer modules.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-      technologies: ["PHP", "JavaScript", "MySQL", "HTML", "CSS"],
-      features: ["Farmer registration", "Product listing", "Admin approval", "Retailer support"],
-      category: "AgroTech",
+        "A machine learning-based solution using CNN to detect plant leaf diseases through image classification, aimed at helping farmers improve crop health.",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6rFg_HzGcKs6HQgaQj_e_TF74mGIv6T50Bg&s",
+      technologies: ["Python", "CNN", "MySQL", "HTML", "CSS", "JavaScript"],
+      features: ["Leaf disease detection", "Image classification", "Machine learning", "Farmer dashboard"],
+      category: "AI/ML",
       icon: Database,
-      github: "https://github.com/nerajlal/farming-assistant-in-php",
+      github: "#",
       demo: "#"
     },
     {
-      title: "Social Welfare System",
+      title: "Blood Donor Availability System",
       description:
-        "A Django-based portal aimed to coordinate social welfare efforts for orphans and old-age homes. Includes donor participation and integrated organization support.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-      technologies: ["Python", "Django", "MySQL", "HTML", "CSS"],
-      features: ["Welfare groups", "Orphan support", "Donation tracking", "Integrated services"],
-      category: "Charity",
-      icon: Globe,
-      github: "https://github.com/nerajlal/socialwelfare-in-python",
+        "A full-stack blood donation platform that allows users to search for donors based on location and blood group, featuring real-time updates, email alerts, and ML integration.",
+      image: "https://media.istockphoto.com/id/1415405974/photo/blood-donor-at-donation-with-bouncy-ball-holding-in-hand.jpg?s=612x612&w=0&k=20&c=j0nkmkJxIP6U6TsI3yTq8iuc0Ufhq6xoW4FSMlKaG6A=",
+      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Python (ML)", "Node Mailer"],
+      features: ["Donor search", "Real-time alerts", "Admin dashboard", "Machine Learning"],
+      category: "Full Stack",
+      icon: Code,
+      github: "#",
       demo: "#"
     }
   ];
@@ -51,7 +51,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Showcasing real-world applications built with hands-on experience and modern technologies.
+            A showcase of real-world projects built using full-stack technologies and machine learning, solving practical problems across industries.
           </p>
         </div>
 
@@ -62,6 +62,7 @@ const Projects = () => {
               className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-glow transition-all duration-300 overflow-hidden group animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
+              {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={project.image}
@@ -89,6 +90,7 @@ const Projects = () => {
               </CardHeader>
 
               <CardContent className="space-y-4">
+                {/* Features */}
                 <div>
                   <h4 className="text-sm font-semibold mb-2">Key Features:</h4>
                   <div className="grid grid-cols-2 gap-1 text-xs text-muted-foreground">
@@ -101,6 +103,7 @@ const Projects = () => {
                   </div>
                 </div>
 
+                {/* Technologies */}
                 <div>
                   <h4 className="text-sm font-semibold mb-2">Technologies:</h4>
                   <div className="flex flex-wrap gap-1">
@@ -112,17 +115,16 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-2 pt-2">
-                  <a href={project.github} target="_blank">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 group/btn hover:bg-primary/10 hover:border-primary/30"
-                    >
-                      <Github className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Code
-                    </Button>
-                  </a>
+                {/* Action Buttons */}
+                {/* <div className="flex gap-2 pt-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 group/btn hover:bg-primary/10 hover:border-primary/30"
+                  >
+                    <Github className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                    Code
+                  </Button>
                   <Button
                     variant="default"
                     size="sm"
@@ -131,27 +133,28 @@ const Projects = () => {
                     <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                     Demo
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12 animate-fade-in delay-500">
-          <a
-            href="https://github.com/nerajlal?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
-            >
-              <Github className="w-5 h-5 mr-2" />
-              View All Projects on GitHub
-            </Button>
-          </a>
+         <a
+  href="https://github.com/devu-krishna13"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    variant="outline"
+    size="lg"
+    className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+  >
+    <Github className="w-5 h-5 mr-2" />
+    View All Projects on GitHub
+  </Button>
+</a>
+
         </div>
       </div>
     </section>
