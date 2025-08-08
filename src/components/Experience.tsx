@@ -5,72 +5,66 @@ import { Calendar, MapPin, Building, Award } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "PHP Full Stack Developer",
-      company: "Task19 Technologies",
-      location: "Kollam, Kerala",
-      period: "2025 - Present",
+      title: "Web Developer & SEO Analyst",
+      company: "The Kerala Store UK",
+      location: "Remote",
+      period: "June 2024 – Present",
       type: "Full-time",
       description: [
-        "Developing and maintaining web apps using PHP, Laravel, and Shopify's Liquid engine.",
-        "Integrated third-party APIs and payment gateways across client stores.",
-        "Managed application deployment and configuration on DigitalOcean.",
-        "Collaborated with designers and backend teams to implement scalable and secure modules."
+        "Developed and deployed responsive, SEO-optimized WordPress websites using custom themes and Elementor.",
+        "Conducted keyword research and implemented on-page SEO strategies using Google Search Console.",
+        "Created and managed content for blogs and product pages aligned with SEO goals.",
+        "Customized PHP-based themes to ensure mobile compatibility and smooth UX."
       ],
-      technologies: ["PHP", "Laravel", "Shopify", "JavaScript", "DigitalOcean"]
+      technologies: ["WordPress", "PHP", "Elementor", "Google Search Console", "HTML", "CSS"]
     },
     {
-      title: "Java Full Stack Intern",
-      company: "QSpiders, Kochi",
-      location: "Kochi, Kerala",
-      period: "2024 - 2025",
+      title: "Full Stack Intern",
+      company: "Srishti Innovative",
+      location: "Kerala, India",
+      period: "Jan 2025 – July 2025",
       type: "Internship",
       description: [
-        "Developed responsive frontend interfaces using React.js.",
-        "Integrated backend APIs using Spring Boot.",
-        "Participated in technical discussions, debugging sessions, and peer code reviews.",
-        "Built secure and scalable modules aligned with client requirements."
+        "Worked on full-stack projects using PHP, JavaScript, and MySQL.",
+        "Assisted in developing responsive UIs and backend APIs.",
+        "Collaborated with senior developers for bug fixing and testing.",
+        "Gained practical experience in performance optimization."
       ],
-      technologies: ["React", "Hibernate", "JDBC", "Spring MVC", "Spring Boot", "MySQL", "Postman", "Git"]
+      technologies: ["PHP", "JavaScript", "MySQL", "HTML", "CSS"]
     },
     {
-      title: "Community Lead (IEDC) & Web Developer",
-      company: "Serve Techno Research",
-      location: "Kollam, Kerala",
-      period: "2022 - 2024",
+      title: "Community Lead – IEDC",
+      company: "Adnet Web Developer",
+      location: "Kerala, India",
+      period: "2023 – 2025",
       type: "Part-time",
       description: [
-        "Developed and maintained full-stack applications for real-world clients.",
-        "Worked on 30+ academic projects and 5+ live client projects including E-commerce.",
-        "Created and managed databases using MySQL and optimized system design.",
-        "Led client meetings, participated in IEDC hackathons, and collaborated with industry experts."
+        "Built full-stack applications using React, PHP, and MySQL.",
+        "Designed user-friendly interfaces to enhance UX.",
+        "Implemented SEO strategies that increased client visibility.",
+        "Boosted client sales by 70% via optimized web solutions."
       ],
-      technologies: ["PHP", "Laravel", "MySQL", "HTML/CSS", "ML", "JavaScript", "Hostinger"]
+      technologies: ["React", "PHP", "CodeIgniter", "MySQL", "SEO"]
     }
   ];
 
   const achievements = [
     {
-      title: "Winner - 24-hour Hackathon",
-      issuer: "IEDC Kerala",
-      date: "2023",
+      title: "13th Rank - MCA State Rank List",
+      issuer: "University of Kerala",
+      date: "2025",
       icon: Award
     },
     {
-      title: "Campus Ambassador",
-      issuer: "Devtown, GDSC, Microsoft Learn",
-      date: "2023",
+      title: "10th Rank - MCA 2nd Semester",
+      issuer: "University of Kerala",
+      date: "2025",
       icon: Award
     },
     {
-      title: "Freecodecamp Certifications",
-      issuer: "Freecodecamp.org",
-      date: "2023",
-      icon: Award
-    },
-    {
-      title: "2nd Place - Coding & Debugging Challenge",
-      issuer: "Intercollege Event",
-      date: "2022",
+      title: "9th Rank - BCA 1st Semester",
+      issuer: "University of Kerala",
+      date: "2020",
       icon: Award
     }
   ];
@@ -83,7 +77,7 @@ const Experience = () => {
             Experience & Achievements
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Practical experience from internships, real-world projects, and student leadership initiatives — building a strong foundation in full stack development.
+            A track record of delivering responsive websites, SEO success, and full-stack development solutions across academic and professional environments.
           </p>
         </div>
 
@@ -94,10 +88,10 @@ const Experience = () => {
               <Building className="w-6 h-6 text-primary" />
               Professional Experience
             </h3>
-            
+
             {experiences.map((exp, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-glow transition-all duration-300 animate-slide-up group"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
@@ -110,18 +104,20 @@ const Experience = () => {
                       {exp.type}
                     </Badge>
                   </div>
-                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted-foreground text-sm mt-2">
-                    <div className="flex items-center gap-1">
+                  <div className="space-y-2 text-muted-foreground">
+                    <div className="flex items-center gap-2">
                       <Building className="w-4 h-4" />
                       <span className="font-medium">{exp.company}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      <span>{exp.period}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      <span>{exp.location}</span>
+                    <div className="flex items-center gap-4 text-sm">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>{exp.period}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        <span>{exp.location}</span>
+                      </div>
                     </div>
                   </div>
                 </CardHeader>
@@ -136,11 +132,7 @@ const Experience = () => {
                   </ul>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, techIndex) => (
-                      <Badge 
-                        key={techIndex} 
-                        variant="secondary" 
-                        className="text-xs"
-                      >
+                      <Badge key={techIndex} variant="secondary" className="text-xs">
                         {tech}
                       </Badge>
                     ))}
@@ -156,11 +148,11 @@ const Experience = () => {
               <Award className="w-6 h-6 text-primary" />
               Key Achievements
             </h3>
-            
+
             <div className="space-y-4">
               {achievements.map((achievement, index) => (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-glow transition-all duration-300 animate-slide-up group"
                   style={{ animationDelay: `${(index + 4) * 150}ms` }}
                 >
@@ -181,18 +173,18 @@ const Experience = () => {
             {/* Education */}
             <div className="mt-12">
               <h3 className="text-xl font-semibold mb-4">Education</h3>
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50 mb-4">
-                <CardContent className="p-4">
-                  <h4 className="font-semibold">Master of Computer Applications (MCA)</h4>
-                  <p className="text-sm text-muted-foreground">Sree Narayana Institute of Technology, Kollam (University of Kerala)</p>
-                  <p className="text-xs text-muted-foreground">2022 - 2024</p>
-                </CardContent>
-              </Card>
               <Card className="bg-card/50 backdrop-blur-sm border-border/50">
                 <CardContent className="p-4">
-                  <h4 className="font-semibold">B.Sc. Computer Science</h4>
-                  <p className="text-sm text-muted-foreground">IHRD College of Applied Science, Kundara (University of Kerala)</p>
-                  <p className="text-xs text-muted-foreground">2019 - 2022</p>
+                  <h4 className="font-semibold">Master of Computer Applications (MCA)</h4>
+                  <p className="text-sm text-muted-foreground">University of Kerala</p>
+                  <p className="text-xs text-muted-foreground">2023 – 2025</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-card/50 backdrop-blur-sm border-border/50 mt-4">
+                <CardContent className="p-4">
+                  <h4 className="font-semibold">Bachelor of Computer Applications (BCA)</h4>
+                  <p className="text-sm text-muted-foreground">University of Kerala</p>
+                  <p className="text-xs text-muted-foreground">2020 – 2023</p>
                 </CardContent>
               </Card>
             </div>
